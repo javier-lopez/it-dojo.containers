@@ -1,0 +1,15 @@
+@begin{000-sample-file}
+test -f /tests/q0
+@end
+
+@begin{001-remove-files-recursively}
+test "$(find /tests/q1.dir -iname "*.pyc" | wc -l)" = "0"
+@end
+
+@begin{002-find-regex-pattern-in-file}
+test "$(md5sum /tests/q2.out | awk '{print $1}')" = "6493082f685500f7b06ac02b0bb0133b"
+@end
+
+@begin{003-replace-regex-in-file}
+test "$(md5sum ~/q3.in | awk '{print $1}')"  = "16abbf19c95ba3573b3423bb18c51a8e"
+@end
